@@ -27,6 +27,31 @@ const App = () => {
     setRobots((prevState) => shuffle([...prevState]));
   };
 
+  const robotCheck = (currRobot) => {
+    if (currRobot.clicked === false) {
+      incrementScore();
+      setRobots(
+        robots.map((robot) => {
+          if (robot.id === currRobot.id) {
+            robot.clicked = true;
+          }
+          return robot;
+        })
+      );
+    } else {
+      resetScore();
+      setRobots(
+        robots.map((robot) => {
+          robot.clicked = false;
+          return robot;
+        })
+      );
+    }
+  };
+
+  const resetScore = () => {
+    setScore(0);
+  };
   const incrementScore = () => {
     setScore((prevState) => prevState + 1);
   };
@@ -36,7 +61,13 @@ const App = () => {
       <Header score={score} />
       <div className="robotHolder">
         {robots.map((robot) => {
-          return <Robot robot={robot} incrementScore={incrementScore} />;
+          return (
+            <Robot
+              robot={robot}
+              robotCheck={robotCheck}
+              incrementScore={incrementScore}
+            />
+          );
         })}
       </div>
     </div>
