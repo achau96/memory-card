@@ -50,6 +50,9 @@ const App = () => {
   };
 
   const resetScore = () => {
+    if (score >= highScore) {
+      setHighScore(score);
+    }
     setScore(0);
   };
   const incrementScore = () => {
@@ -58,7 +61,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header score={score} />
+      <Header score={score} highScore={highScore} />
       <div className="robotHolder">
         {robots.map((robot) => {
           return (

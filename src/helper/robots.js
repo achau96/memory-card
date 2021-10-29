@@ -29,6 +29,26 @@ const robots = [
     name: 'Ninja',
     clicked: false,
   },
+  {
+    id: 7,
+    name: 'Coolio',
+    clicked: false,
+  },
+  {
+    id: 8,
+    name: 'Diamond',
+    clicked: false,
+  },
+  {
+    id: 9,
+    name: 'Lettuce',
+    clicked: false,
+  },
+  {
+    id: 10,
+    name: 'BigPops',
+    clicked: false,
+  },
 ];
 
 export default robots;

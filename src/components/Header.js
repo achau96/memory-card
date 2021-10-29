@@ -4,7 +4,9 @@ const Header = (props) => {
   return (
     <div className="header">
       <div>Memory Card Game</div>
-      <div>Score: {props.score} &nbsp; High Score: 0</div>
+      <div>
+        Score: {props.score} &nbsp; High Score: {props.highScore}
+      </div>
     </div>
   );
 };
